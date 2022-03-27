@@ -44,7 +44,7 @@ public class ITunesPagingSource<T extends AbstractResult> extends RxPagingSource
                         return new LoadResult.Error(throwable);
                     });
         } else if (type.equals(Track.class)) {
-            return iTunesService.searchTrack(query, entity, API_RESULT_LIMIT, API_RESULT_LIMIT * ((page * PAGE_LIMIT) / API_RESULT_LIMIT))
+            return iTunesService.searchTrack(query, entity, API_RESULT_LIMIT, (page - 1) * PAGE_LIMIT)
                     .subscribeOn(Schedulers.io())
                     .map(iTunesResult -> (List<T>) iTunesResult.getResults())
                     .map(abstractResults -> toLoadResult(abstractResults, page))
