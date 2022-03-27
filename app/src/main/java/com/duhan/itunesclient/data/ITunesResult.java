@@ -1,41 +1,18 @@
 package com.duhan.itunesclient.data;
 
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 import java.util.Objects;
 
-public class ITunesResult implements Parcelable {
-
-    public static final Creator<ITunesResult> CREATOR = new Creator<ITunesResult>() {
-
-
-        @SuppressWarnings({
-                "unchecked"
-        })
-        public ITunesResult createFromParcel(android.os.Parcel in) {
-            return new ITunesResult(in);
-        }
-
-        public ITunesResult[] newArray(int size) {
-            return (new ITunesResult[size]);
-        }
-
-    };
+public class ITunesResult<T>{
     @SerializedName("resultCount")
     @Expose
     private long resultCount;
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
-
-    protected ITunesResult(android.os.Parcel in) {
-        this.resultCount = ((long) in.readValue((long.class.getClassLoader())));
-        in.readList(this.results, (Result.class.getClassLoader()));
-    }
+    private List<T> results = null;
 
     public ITunesResult() {
     }
@@ -53,15 +30,15 @@ public class ITunesResult implements Parcelable {
         return this;
     }
 
-    public List<Result> getResults() {
+    public List<T> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<T> results) {
         this.results = results;
     }
 
-    public ITunesResult withResults(List<Result> results) {
+    public ITunesResult withResults(List<T> results) {
         this.results = results;
         return this;
     }
@@ -104,15 +81,6 @@ public class ITunesResult implements Parcelable {
         }
         ITunesResult rhs = ((ITunesResult) other);
         return ((Objects.equals(this.results, rhs.results)) && (this.resultCount == rhs.resultCount));
-    }
-
-    public void writeToParcel(android.os.Parcel dest, int flags) {
-        dest.writeValue(resultCount);
-        dest.writeList(results);
-    }
-
-    public int describeContents() {
-        return 0;
     }
 
 }

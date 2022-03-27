@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/secondaryColor"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp">
+            <!--
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/artistImage"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            tools:src="@drawable/sample_artist" />
+            -->
+            <TextView
+                android:id="@+id/artistNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/NameLabel"
+                android:textColor="@color/secondaryTextColor" />
+
+            <TextView
+                android:id="@+id/artistName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/artistNameLabel"
+                android:textColor="@color/secondaryTextColor"
+                tools:text="Maroon 5" />
+
+            <TextView
+                android:id="@+id/genreNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/artistNameLabel"
+                android:text="@string/GenreLabel"
+                android:textColor="@color/secondaryTextColor" />
+
+            <TextView
+                android:id="@+id/artistGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/artistNameLabel"
+                android:layout_toEndOf="@+id/artistNameLabel"
+                android:textColor="@color/secondaryTextColor"
+                tools:text="Rock" />
+
+            <TextView
+                android:id="@+id/typeNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/genreNameLabel"
+                android:text="@string/TypeLabel"
+                android:textColor="@color/secondaryTextColor" />
+
+            <TextView
+                android:id="@+id/artistType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/genreNameLabel"
+                android:layout_toEndOf="@+id/genreNameLabel"
+                android:textColor="@color/secondaryTextColor"
+                tools:text="Music" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

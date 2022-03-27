@@ -1,25 +1,12 @@
 package com.duhan.itunesclient.data;
 
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
 
-public class Result implements Parcelable {
+public class Track extends AbstractResult {
 
-    public static final Creator<Result> CREATOR = new Creator<Result>() {
-
-        public Result createFromParcel(android.os.Parcel in) {
-            return new Result(in);
-        }
-
-        public Result[] newArray(int size) {
-            return (new Result[size]);
-        }
-
-    };
     @SerializedName("wrapperType")
     @Expose
     private String wrapperType;
@@ -135,59 +122,14 @@ public class Result implements Parcelable {
     @Expose
     private boolean hasITunesExtras;
 
-    protected Result(android.os.Parcel in) {
-        this.wrapperType = ((String) in.readValue((String.class.getClassLoader())));
-        this.kind = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionId = ((long) in.readValue((long.class.getClassLoader())));
-        this.trackId = ((long) in.readValue((long.class.getClassLoader())));
-        this.artistName = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionName = ((String) in.readValue((String.class.getClassLoader())));
-        this.trackName = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionCensoredName = ((String) in.readValue((String.class.getClassLoader())));
-        this.trackCensoredName = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionArtistId = ((long) in.readValue((long.class.getClassLoader())));
-        this.collectionArtistViewUrl = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionViewUrl = ((String) in.readValue((String.class.getClassLoader())));
-        this.trackViewUrl = ((String) in.readValue((String.class.getClassLoader())));
-        this.previewUrl = ((String) in.readValue((String.class.getClassLoader())));
-        this.artworkUrl30 = ((String) in.readValue((String.class.getClassLoader())));
-        this.artworkUrl60 = ((String) in.readValue((String.class.getClassLoader())));
-        this.artworkUrl100 = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionPrice = ((double) in.readValue((double.class.getClassLoader())));
-        this.trackPrice = ((double) in.readValue((double.class.getClassLoader())));
-        this.trackRentalPrice = ((double) in.readValue((double.class.getClassLoader())));
-        this.collectionHdPrice = ((double) in.readValue((double.class.getClassLoader())));
-        this.trackHdPrice = ((double) in.readValue((double.class.getClassLoader())));
-        this.trackHdRentalPrice = ((double) in.readValue((double.class.getClassLoader())));
-        this.releaseDate = ((String) in.readValue((String.class.getClassLoader())));
-        this.collectionExplicitness = ((String) in.readValue((String.class.getClassLoader())));
-        this.trackExplicitness = ((String) in.readValue((String.class.getClassLoader())));
-        this.discCount = ((long) in.readValue((long.class.getClassLoader())));
-        this.discNumber = ((long) in.readValue((long.class.getClassLoader())));
-        this.trackCount = ((long) in.readValue((long.class.getClassLoader())));
-        this.trackNumber = ((long) in.readValue((long.class.getClassLoader())));
-        this.trackTimeMillis = ((long) in.readValue((long.class.getClassLoader())));
-        this.country = ((String) in.readValue((String.class.getClassLoader())));
-        this.currency = ((String) in.readValue((String.class.getClassLoader())));
-        this.primaryGenreName = ((String) in.readValue((String.class.getClassLoader())));
-        this.contentAdvisoryRating = ((String) in.readValue((String.class.getClassLoader())));
-        this.shortDescription = ((String) in.readValue((String.class.getClassLoader())));
-        this.longDescription = ((String) in.readValue((String.class.getClassLoader())));
-        this.hasITunesExtras = ((boolean) in.readValue((boolean.class.getClassLoader())));
-    }
-
-    public Result() {
-    }
-
-    public String getWrapperType() {
-        return wrapperType;
+    public Track() {
     }
 
     public void setWrapperType(String wrapperType) {
         this.wrapperType = wrapperType;
     }
 
-    public Result withWrapperType(String wrapperType) {
+    public Track withWrapperType(String wrapperType) {
         this.wrapperType = wrapperType;
         return this;
     }
@@ -200,7 +142,7 @@ public class Result implements Parcelable {
         this.kind = kind;
     }
 
-    public Result withKind(String kind) {
+    public Track withKind(String kind) {
         this.kind = kind;
         return this;
     }
@@ -213,7 +155,7 @@ public class Result implements Parcelable {
         this.collectionId = collectionId;
     }
 
-    public Result withCollectionId(long collectionId) {
+    public Track withCollectionId(long collectionId) {
         this.collectionId = collectionId;
         return this;
     }
@@ -226,7 +168,7 @@ public class Result implements Parcelable {
         this.trackId = trackId;
     }
 
-    public Result withTrackId(long trackId) {
+    public Track withTrackId(long trackId) {
         this.trackId = trackId;
         return this;
     }
@@ -239,7 +181,7 @@ public class Result implements Parcelable {
         this.artistName = artistName;
     }
 
-    public Result withArtistName(String artistName) {
+    public Track withArtistName(String artistName) {
         this.artistName = artistName;
         return this;
     }
@@ -252,7 +194,7 @@ public class Result implements Parcelable {
         this.collectionName = collectionName;
     }
 
-    public Result withCollectionName(String collectionName) {
+    public Track withCollectionName(String collectionName) {
         this.collectionName = collectionName;
         return this;
     }
@@ -265,7 +207,7 @@ public class Result implements Parcelable {
         this.trackName = trackName;
     }
 
-    public Result withTrackName(String trackName) {
+    public Track withTrackName(String trackName) {
         this.trackName = trackName;
         return this;
     }
@@ -278,7 +220,7 @@ public class Result implements Parcelable {
         this.collectionCensoredName = collectionCensoredName;
     }
 
-    public Result withCollectionCensoredName(String collectionCensoredName) {
+    public Track withCollectionCensoredName(String collectionCensoredName) {
         this.collectionCensoredName = collectionCensoredName;
         return this;
     }
@@ -291,7 +233,7 @@ public class Result implements Parcelable {
         this.trackCensoredName = trackCensoredName;
     }
 
-    public Result withTrackCensoredName(String trackCensoredName) {
+    public Track withTrackCensoredName(String trackCensoredName) {
         this.trackCensoredName = trackCensoredName;
         return this;
     }
@@ -304,7 +246,7 @@ public class Result implements Parcelable {
         this.collectionArtistId = collectionArtistId;
     }
 
-    public Result withCollectionArtistId(long collectionArtistId) {
+    public Track withCollectionArtistId(long collectionArtistId) {
         this.collectionArtistId = collectionArtistId;
         return this;
     }
@@ -317,7 +259,7 @@ public class Result implements Parcelable {
         this.collectionArtistViewUrl = collectionArtistViewUrl;
     }
 
-    public Result withCollectionArtistViewUrl(String collectionArtistViewUrl) {
+    public Track withCollectionArtistViewUrl(String collectionArtistViewUrl) {
         this.collectionArtistViewUrl = collectionArtistViewUrl;
         return this;
     }
@@ -330,7 +272,7 @@ public class Result implements Parcelable {
         this.collectionViewUrl = collectionViewUrl;
     }
 
-    public Result withCollectionViewUrl(String collectionViewUrl) {
+    public Track withCollectionViewUrl(String collectionViewUrl) {
         this.collectionViewUrl = collectionViewUrl;
         return this;
     }
@@ -343,7 +285,7 @@ public class Result implements Parcelable {
         this.trackViewUrl = trackViewUrl;
     }
 
-    public Result withTrackViewUrl(String trackViewUrl) {
+    public Track withTrackViewUrl(String trackViewUrl) {
         this.trackViewUrl = trackViewUrl;
         return this;
     }
@@ -356,7 +298,7 @@ public class Result implements Parcelable {
         this.previewUrl = previewUrl;
     }
 
-    public Result withPreviewUrl(String previewUrl) {
+    public Track withPreviewUrl(String previewUrl) {
         this.previewUrl = previewUrl;
         return this;
     }
@@ -369,7 +311,7 @@ public class Result implements Parcelable {
         this.artworkUrl30 = artworkUrl30;
     }
 
-    public Result withArtworkUrl30(String artworkUrl30) {
+    public Track withArtworkUrl30(String artworkUrl30) {
         this.artworkUrl30 = artworkUrl30;
         return this;
     }
@@ -382,7 +324,7 @@ public class Result implements Parcelable {
         this.artworkUrl60 = artworkUrl60;
     }
 
-    public Result withArtworkUrl60(String artworkUrl60) {
+    public Track withArtworkUrl60(String artworkUrl60) {
         this.artworkUrl60 = artworkUrl60;
         return this;
     }
@@ -395,7 +337,7 @@ public class Result implements Parcelable {
         this.artworkUrl100 = artworkUrl100;
     }
 
-    public Result withArtworkUrl100(String artworkUrl100) {
+    public Track withArtworkUrl100(String artworkUrl100) {
         this.artworkUrl100 = artworkUrl100;
         return this;
     }
@@ -408,7 +350,7 @@ public class Result implements Parcelable {
         this.collectionPrice = collectionPrice;
     }
 
-    public Result withCollectionPrice(double collectionPrice) {
+    public Track withCollectionPrice(double collectionPrice) {
         this.collectionPrice = collectionPrice;
         return this;
     }
@@ -421,7 +363,7 @@ public class Result implements Parcelable {
         this.trackPrice = trackPrice;
     }
 
-    public Result withTrackPrice(double trackPrice) {
+    public Track withTrackPrice(double trackPrice) {
         this.trackPrice = trackPrice;
         return this;
     }
@@ -434,7 +376,7 @@ public class Result implements Parcelable {
         this.trackRentalPrice = trackRentalPrice;
     }
 
-    public Result withTrackRentalPrice(double trackRentalPrice) {
+    public Track withTrackRentalPrice(double trackRentalPrice) {
         this.trackRentalPrice = trackRentalPrice;
         return this;
     }
@@ -447,7 +389,7 @@ public class Result implements Parcelable {
         this.collectionHdPrice = collectionHdPrice;
     }
 
-    public Result withCollectionHdPrice(double collectionHdPrice) {
+    public Track withCollectionHdPrice(double collectionHdPrice) {
         this.collectionHdPrice = collectionHdPrice;
         return this;
     }
@@ -460,7 +402,7 @@ public class Result implements Parcelable {
         this.trackHdPrice = trackHdPrice;
     }
 
-    public Result withTrackHdPrice(double trackHdPrice) {
+    public Track withTrackHdPrice(double trackHdPrice) {
         this.trackHdPrice = trackHdPrice;
         return this;
     }
@@ -473,7 +415,7 @@ public class Result implements Parcelable {
         this.trackHdRentalPrice = trackHdRentalPrice;
     }
 
-    public Result withTrackHdRentalPrice(double trackHdRentalPrice) {
+    public Track withTrackHdRentalPrice(double trackHdRentalPrice) {
         this.trackHdRentalPrice = trackHdRentalPrice;
         return this;
     }
@@ -486,7 +428,7 @@ public class Result implements Parcelable {
         this.releaseDate = releaseDate;
     }
 
-    public Result withReleaseDate(String releaseDate) {
+    public Track withReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
         return this;
     }
@@ -499,7 +441,7 @@ public class Result implements Parcelable {
         this.collectionExplicitness = collectionExplicitness;
     }
 
-    public Result withCollectionExplicitness(String collectionExplicitness) {
+    public Track withCollectionExplicitness(String collectionExplicitness) {
         this.collectionExplicitness = collectionExplicitness;
         return this;
     }
@@ -512,7 +454,7 @@ public class Result implements Parcelable {
         this.trackExplicitness = trackExplicitness;
     }
 
-    public Result withTrackExplicitness(String trackExplicitness) {
+    public Track withTrackExplicitness(String trackExplicitness) {
         this.trackExplicitness = trackExplicitness;
         return this;
     }
@@ -525,7 +467,7 @@ public class Result implements Parcelable {
         this.discCount = discCount;
     }
 
-    public Result withDiscCount(long discCount) {
+    public Track withDiscCount(long discCount) {
         this.discCount = discCount;
         return this;
     }
@@ -538,7 +480,7 @@ public class Result implements Parcelable {
         this.discNumber = discNumber;
     }
 
-    public Result withDiscNumber(long discNumber) {
+    public Track withDiscNumber(long discNumber) {
         this.discNumber = discNumber;
         return this;
     }
@@ -551,7 +493,7 @@ public class Result implements Parcelable {
         this.trackCount = trackCount;
     }
 
-    public Result withTrackCount(long trackCount) {
+    public Track withTrackCount(long trackCount) {
         this.trackCount = trackCount;
         return this;
     }
@@ -564,7 +506,7 @@ public class Result implements Parcelable {
         this.trackNumber = trackNumber;
     }
 
-    public Result withTrackNumber(long trackNumber) {
+    public Track withTrackNumber(long trackNumber) {
         this.trackNumber = trackNumber;
         return this;
     }
@@ -577,7 +519,7 @@ public class Result implements Parcelable {
         this.trackTimeMillis = trackTimeMillis;
     }
 
-    public Result withTrackTimeMillis(long trackTimeMillis) {
+    public Track withTrackTimeMillis(long trackTimeMillis) {
         this.trackTimeMillis = trackTimeMillis;
         return this;
     }
@@ -590,7 +532,7 @@ public class Result implements Parcelable {
         this.country = country;
     }
 
-    public Result withCountry(String country) {
+    public Track withCountry(String country) {
         this.country = country;
         return this;
     }
@@ -603,7 +545,7 @@ public class Result implements Parcelable {
         this.currency = currency;
     }
 
-    public Result withCurrency(String currency) {
+    public Track withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
@@ -616,7 +558,7 @@ public class Result implements Parcelable {
         this.primaryGenreName = primaryGenreName;
     }
 
-    public Result withPrimaryGenreName(String primaryGenreName) {
+    public Track withPrimaryGenreName(String primaryGenreName) {
         this.primaryGenreName = primaryGenreName;
         return this;
     }
@@ -629,7 +571,7 @@ public class Result implements Parcelable {
         this.contentAdvisoryRating = contentAdvisoryRating;
     }
 
-    public Result withContentAdvisoryRating(String contentAdvisoryRating) {
+    public Track withContentAdvisoryRating(String contentAdvisoryRating) {
         this.contentAdvisoryRating = contentAdvisoryRating;
         return this;
     }
@@ -642,7 +584,7 @@ public class Result implements Parcelable {
         this.shortDescription = shortDescription;
     }
 
-    public Result withShortDescription(String shortDescription) {
+    public Track withShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
         return this;
     }
@@ -655,7 +597,7 @@ public class Result implements Parcelable {
         this.longDescription = longDescription;
     }
 
-    public Result withLongDescription(String longDescription) {
+    public Track withLongDescription(String longDescription) {
         this.longDescription = longDescription;
         return this;
     }
@@ -668,7 +610,7 @@ public class Result implements Parcelable {
         this.hasITunesExtras = hasITunesExtras;
     }
 
-    public Result withHasITunesExtras(boolean hasITunesExtras) {
+    public Track withHasITunesExtras(boolean hasITunesExtras) {
         this.hasITunesExtras = hasITunesExtras;
         return this;
     }
@@ -676,7 +618,7 @@ public class Result implements Parcelable {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Result.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(Track.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("wrapperType");
         sb.append('=');
         sb.append(((this.wrapperType == null) ? "<null>" : this.wrapperType));
@@ -886,10 +828,10 @@ public class Result implements Parcelable {
         if (other == this) {
             return true;
         }
-        if (!(other instanceof Result)) {
+        if (!(other instanceof Track)) {
             return false;
         }
-        Result rhs = ((Result) other);
+        Track rhs = ((Track) other);
         return Objects.equals(this.artworkUrl100, rhs.artworkUrl100)
                 && this.trackTimeMillis == rhs.trackTimeMillis
                 && this.longDescription.equals(rhs.longDescription)
