@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelKt;
 import androidx.paging.PagingData;
 import androidx.paging.rxjava3.PagingRx;
 
-import com.duhan.itunesclient.data.AbstractResult;
 import com.duhan.itunesclient.data.Artist;
 import com.duhan.itunesclient.data.ITunesRepository;
 import com.duhan.itunesclient.data.Track;
@@ -16,7 +15,6 @@ import javax.inject.Inject;
 
 import dagger.hilt.android.lifecycle.HiltViewModel;
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.subjects.PublishSubject;
 
 @HiltViewModel
 public class SearchViewModel extends ViewModel {
@@ -24,7 +22,7 @@ public class SearchViewModel extends ViewModel {
     private Flowable<PagingData<Artist>> artistResult;
     private Flowable<PagingData<Track>> trackResult;
     private String query;
-    private MutableLiveData<String> queryLiveData = new MutableLiveData<>();
+    private final MutableLiveData<String> queryLiveData = new MutableLiveData<>();
 
     @Inject
     public SearchViewModel(ITunesRepository iTunesRepository) {

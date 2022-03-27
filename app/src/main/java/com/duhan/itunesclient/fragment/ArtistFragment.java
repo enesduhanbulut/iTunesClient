@@ -29,6 +29,7 @@ import io.reactivex.rxjava3.subscribers.DisposableSubscriber;
 public class ArtistFragment extends Fragment {
     private SearchViewModel searchViewModel;
     private ArtistAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

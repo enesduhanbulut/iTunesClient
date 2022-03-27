@@ -35,10 +35,10 @@ public class ITunesPagingSource<T extends AbstractResult> extends RxPagingSource
     public Single<PagingSource.LoadResult<Integer, T>> loadSingle(@NotNull PagingSource.LoadParams<Integer> params) {
         final int page = params.getKey() != null ? params.getKey() : 1;
         if (type.equals(Artist.class)) {
-            return iTunesService.searchArtist(query, entity, API_RESULT_LIMIT, (page -1) * PAGE_LIMIT )
+            return iTunesService.searchArtist(query, entity, API_RESULT_LIMIT, (page - 1) * PAGE_LIMIT)
                     .subscribeOn(Schedulers.io())
                     .map(iTunesResult -> (List<T>) iTunesResult.getResults())
-                    .map(abstractResults -> toLoadResult((List<T>) abstractResults, page))
+                    .map(abstractResults -> toLoadResult(abstractResults, page))
                     .onErrorReturn(throwable -> {
                         throwable.printStackTrace();
                         return new LoadResult.Error(throwable);

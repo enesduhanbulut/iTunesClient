@@ -47,6 +47,7 @@ public class ArtistAdapter extends BaseAdapter<Artist, ArtistAdapter.ViewHolder>
         private final TextView artistName;
         private final TextView artistGenre;
         private final TextView artistType;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             artistName = itemView.findViewById(R.id.artistName);

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import java.util.Objects;
 
-public class ITunesResult<T>{
+public class ITunesResult<T> {
     @SerializedName("resultCount")
     @Expose
     private long resultCount;

@@ -3,7 +3,7 @@ package com.duhan.itunesclient.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public abstract class AbstractResult{
+public abstract class AbstractResult {
     @SerializedName("wrapperType")
     @Expose(serialize = false, deserialize = false)
     public String wrapperType;

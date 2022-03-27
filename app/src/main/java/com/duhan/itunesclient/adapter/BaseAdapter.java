@@ -5,9 +5,6 @@ import androidx.paging.PagingDataAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class BaseAdapter<T, S extends RecyclerView.ViewHolder> extends PagingDataAdapter<T, S> {
 
     public BaseAdapter(@NonNull DiffUtil.ItemCallback<T> diffCallback) {

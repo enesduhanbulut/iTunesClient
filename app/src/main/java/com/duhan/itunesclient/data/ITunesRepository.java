@@ -31,5 +31,6 @@ public class ITunesRepository {
     public Flowable<PagingData<Track>> searchTrack(String query) {
         Pager<Integer, Track> pager = new Pager(pagingConfig,
                 () -> new ITunesPagingSource<>(Track.class, iTunesService, query, WrapperType.TRACK.getEntity()));
-        return PagingRx.getFlowable(pager);    }
+        return PagingRx.getFlowable(pager);
+    }
 }

@@ -1,15 +1,12 @@
 package com.duhan.itunesclient.api;
 
 import com.duhan.itunesclient.data.Artist;
-import com.duhan.itunesclient.data.Collection;
 import com.duhan.itunesclient.data.ITunesResult;
 import com.duhan.itunesclient.data.Track;
-import com.duhan.itunesclient.data.WrapperType;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
-import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Single;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -35,6 +32,7 @@ public interface ITunesService {
 
     @GET("search")
     Single<ITunesResult<Artist>> searchArtist(@Query("term") String query, @Query("entity") String entity, @Query("limit") int limit, @Query("offset") int offset);
+
     @GET("search")
     Single<ITunesResult<Track>> searchTrack(@Query("term") String query, @Query("entity") String entity, @Query("limit") int limit, @Query("offset") int offset);
 }

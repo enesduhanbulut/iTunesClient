@@ -107,9 +107,11 @@ public class SearchFragment extends Fragment {
         @Override
         public Fragment createFragment(int position) {
             // Hardcoded in this order, you'll want to use lists and make sure the titles match
-            switch (position){
-                case 1 : return new TrackFragment();
-                default: return new ArtistFragment();
+            switch (position) {
+                case 1:
+                    return new TrackFragment();
+                default:
+                    return new ArtistFragment();
             }
         }
 

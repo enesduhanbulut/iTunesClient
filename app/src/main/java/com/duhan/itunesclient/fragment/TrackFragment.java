@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.duhan.itunesclient.R;
 import com.duhan.itunesclient.adapter.TrackAdapter;
-import com.duhan.itunesclient.data.Artist;
 import com.duhan.itunesclient.data.Track;
 import com.duhan.itunesclient.viewmodel.SearchViewModel;
 
